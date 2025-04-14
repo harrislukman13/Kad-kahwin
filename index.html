@@ -79,9 +79,9 @@
                     <p>11:00 AM - 4:00 PM</p>
                 </div>
             </div>
-            <!-- Aturcara & Countdown Section -->
+
+            <!-- Countdown Section -->
             <div class="countdown reveal fade-bottom">
-                <!-- Countdown Timer -->
                 <div class="hero connect-page">
                     <div class="container">
                         <div class="hero-body">
@@ -112,6 +112,7 @@
                     </div>
                 </div>
             </div>
+
             <!-- Aturcara -->
             <div class="aturcara reveal fade-bottom">
                 <p class="title">aturcara majlis</p>
@@ -132,6 +133,7 @@
                     <p>4:00 Petang</p>
                 </div>
             </div>
+
             <div class="ucapan reveal fade-bottom">
                 <div class="container">
                     <img src="./images/ucapan-bg.png" alt="">
@@ -146,6 +148,9 @@
                     </div>
                 </div>
             </div>
+            <img src="./images/divider.png" alt="" class="divider reveal fade-bottom">
+        </section>
+
         <section class="footer">
             <ul class="menu">
                 <li id="calendar-btn"><i class='bx bx-calendar'></i></li>
@@ -156,7 +161,7 @@
         </section>
     </div>
 
-    <!-- Bottom Modal -->
+    <!-- Calendar Modal -->
     <div id="calendar-menu" class="toggle-menu">
         <div class="calendar">
             <h1>Calendar</h1>
@@ -178,12 +183,13 @@
         </div>
     </div>
 
+    <!-- Location Modal -->
     <div id="location-menu" class="toggle-menu">
         <div class="location">
             <h1>Lokasi</h1>
             <p>No 11 Jalan Melor 5E</p>
-                    <p>Taman Desa Melor</p>
-                    <p>Serendah</p>
+            <p>Taman Desa Melor</p>
+            <p>Serendah</p>
             <div class="button" onclick="openGoogleMaps()">
                 <button class="google">
                     <i class='bx bxl-google'></i>
@@ -197,6 +203,7 @@
         </div>
     </div>
 
+    <!-- Music Modal -->
     <div id="music-menu" class="toggle-menu">
         <div class="music">
             <h1>Lagu</h1>
@@ -209,6 +216,7 @@
         </div>
     </div>
 
+    <!-- Contact Modal -->
     <div id="contact-menu" class="toggle-menu">
         <div class="contact">
             <h1>Hubungi</h1>
@@ -255,34 +263,6 @@
             </div>
         </div>
     </div>
-
-    <div id="ucapan-menu" class="toggle-menu">
-        <div class="ucapan-tetamu">
-            <h1>Sampaikan Ucapan</h1>
-            <form id="form-ucapan" class="form-ucapan" action="insert_message.php" method="POST">
-                <label for="name">Nama Anda</label>
-                <input type="text" name="name" placeholder="Hazmi Hazim" required>
-
-                <label for="ucapan">Ucapan</label>
-                <textarea name="message" id="ucapan" cols="30" rows="10" placeholder="Selemat pengantin baru..."
-                    required></textarea>
-
-                <div class="button">
-                    <button type="submit" class="hantar" id="hantar">
-                        <i class='bx bxs-paper-plane'></i>
-                        <span>Hantar</span>
-                    </button>
-                    <button class="tutup">
-                        <i class='bx bx-x'></i>
-                        <span>Tutup</span>
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-    <!-- This container will hold the success message and will be dynamically populated -->
-    <div id="success-menu" class="toggle-menu"></div>
-
 
     <!-- Js Vendor -->
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
