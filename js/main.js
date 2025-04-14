@@ -73,10 +73,10 @@ document.addEventListener("DOMContentLoaded", function () {
  *  Add to Calendar
   ======================================================= */
 const event = {
-    title: "Jemputan Kenduri Kahwin Fawwaz & Aina",
+    title: "Jemputan Kenduri Kahwin Haris & Dannea",
     startDate: "20250510T033000Z",
     endDate: "20250510T090000Z",
-    location: "1595 Lorong Muhibbah 16, Kampung Tersusun Muhibbah Batu 33, Temoh Perak, Malaysia",
+    location: "No1, km20 jalan ipoh-rawang,taman rekreasi templer, 48000 Rawang, Selangor",
     description: "Kami menjemput tuan/puan hadir ke majlis perkahwinan anakanda kami.",
 };
 
@@ -123,14 +123,14 @@ function addAppleCalendar() {
 function openGoogleMaps() {
     const latitude = 4.226058186123785;
     const longitude = 101.22905188341969;
-    const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}&travelmode=driving`;
+    const googleMapsUrl = `https://maps.app.goo.gl/AX7ZCthqgnfv7yYz6`;
     window.open(googleMapsUrl, "_blank");
 }
 
 function openWaze() {
     const latitude = 4.226058186123785;
     const longitude = 101.22905188341969;
-    const wazeUrl = `waze://?ll=${latitude},${longitude}&navigate=yes`;
+    const wazeUrl = `https://waze.com/ul/hw2868z01s`;
     window.open(wazeUrl, "_blank");
 }
 
