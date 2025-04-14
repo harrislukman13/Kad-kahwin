@@ -301,8 +301,6 @@ const toggleButtons = {
     'calendar-btn': 'calendar-menu',
     'location-btn': 'location-menu',
     'music-btn': 'music-menu',
-    'rsvp-btn': 'rsvp-menu',
-    'ucapan-btn': 'ucapan-menu',
     'contact-btn': 'contact-menu',
     'kehadiran-btn': 'rsvp-menu',
     'btn-hadir': 'success-menu'
@@ -355,20 +353,6 @@ function closeMenu(menuId) {
         menu.classList.remove('open'); // Close the menu
     }
 }
-
-// Add event listener for the close button inside the ucapan menu
-const closeButton = document.querySelector('#ucapan-menu .tutup');
-if (closeButton) {
-    closeButton.addEventListener('click', (event) => {
-        event.stopPropagation(); // Prevent this from propagating and triggering other closures
-        closeMenu('ucapan-menu'); // Close the specific menu
-    });
-}
-
-// Function to open RSVP
-const kehadiranBtn = document.getElementById("kehadiran-btn");
-
-
 
 
 
