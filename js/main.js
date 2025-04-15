@@ -257,7 +257,7 @@ document.addEventListener('click', () => closeAllMenus());
     autoSlideInterval = setInterval(() => {
       currentIndex = (currentIndex + 1) % items.length;
       setPositionByIndex();
-    }, 4000);
+    }, 7000);
   }
 
   function setPositionByIndex() {
@@ -325,3 +325,5 @@ document.addEventListener('click', () => closeAllMenus());
   });
 
   autoSlide();
+
+  
