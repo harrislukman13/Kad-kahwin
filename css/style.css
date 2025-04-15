@@ -266,7 +266,7 @@ section {
 .card section.intro .content h2 {
     margin-top: 50px;
     margin-bottom: 50px;
-    font-family: "Allura", cursive;
+    font-family: "Playfair Display", serif;
     font-size: 48px;
     font-weight: 500;
     color: #111111;
@@ -291,7 +291,7 @@ section {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding: 20px;
+    padding: 50px 0px;
     background: linear-gradient(to right, #F8F4FF, #f9fcff, #F8F4FF);
     min-height: 100vh;
 }
@@ -308,7 +308,7 @@ section {
     width: 75%;
     text-align: center;
     position: relative;
-    z-index: 500;
+    z-index: 100;
 }
 
 .card section.info .event-info p {
