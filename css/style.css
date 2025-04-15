@@ -352,6 +352,9 @@ section {
 .card section.info .event-info .one .parent p {
     font-size: 18px;
     font-weight: 700;
+    white-space: nowrap;  /* Prevent wrapping */
+    overflow: hidden;     /* Ensure content doesn't overflow */
+    text-overflow: ellipsis;
 }
 
 .card section.info .event-info .two {
@@ -367,6 +370,9 @@ section {
     color: darkcyan;
     font-weight: 700;
     font-size: 18px;
+    white-space: nowrap;  /* Prevent wrapping */
+    overflow: hidden;     /* Ensure content doesn't overflow */
+    text-overflow: ellipsis;
 }
 
 .card section.info .event-info .three .title,
