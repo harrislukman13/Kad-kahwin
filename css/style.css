@@ -650,10 +650,11 @@ section {
 }
 
 .card section.info .ucapan .content p {
-    font-size: 16px;
-    font-family: 'Cormorant Garamond', serif;
-    margin: 0;
+    font-size: 18px;
+    font-family: 'Raleway', serif;
+    margin: 4px;
     text-align: center;
+    letter-spacing: 2px;
 }
 
 .card section.info .ucapan img {

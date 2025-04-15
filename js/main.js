@@ -290,15 +290,23 @@ document.addEventListener('click', () => closeAllMenus());
     };
 
     const touchEnd = () => {
-      isDragging = false;
-      const movedBy = currentTranslate - prevTranslate;
-
-      if (movedBy < -50 && currentIndex < items.length - 1) currentIndex += 1;
-      if (movedBy > 50 && currentIndex > 0) currentIndex -= 1;
-
-      setPositionByIndex();
-      autoSlide();
-    };
+        isDragging = false;
+        const movedBy = currentTranslate - prevTranslate;
+      
+        if (movedBy < -50 && currentIndex < items.length - 1) currentIndex += 1;
+        if (movedBy > 50 && currentIndex > 0) currentIndex -= 1;
+      
+        setPositionByIndex();
+        autoSlide(); // Restart timer here
+      };
+      
+      dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+          currentIndex = parseInt(dot.dataset.index);
+          setPositionByIndex();
+          autoSlide(); // Restart timer here too
+        });
+      });
 
     item.addEventListener('touchstart', touchStart);
     item.addEventListener('touchmove', touchMove);
@@ -324,6 +332,12 @@ document.addEventListener('click', () => closeAllMenus());
     });
   });
 
-  autoSlide();
+  function autoSlide() {
+    clearInterval(autoSlideInterval); // Clear any existing interval
+    autoSlideInterval = setInterval(() => {
+      currentIndex = (currentIndex + 1) % items.length;
+      setPositionByIndex();
+    }, 5000);
+  }
 
   
