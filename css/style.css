@@ -367,7 +367,7 @@ section {
 
 .card section.info .event-info .two p {
     font-family: "Playfair Display", serif;
-    color: darkcyan;
+    color: #924DBF;
     font-weight: 700;
     font-size: 18px;
     white-space: nowrap;  /* Prevent wrapping */
@@ -1204,3 +1204,49 @@ section {
 /*============================================================================================
     # Image Carousel
 ============================================================================================*/
+.carousel-container {
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    touch-action: pan-y;
+  }
+
+  .carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .carousel-item {
+    min-width: 100%;
+    user-select: none;
+  }
+
+  .carousel-item img {
+    width: 100%;
+    display: block;
+    height: auto;
+  }
+
+  .dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 10px;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .dot.active {
+    background-color: #555;
+  }
+
+/* Optional: Add styling for dots or arrows (you can customize this part) */

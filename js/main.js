@@ -239,3 +239,89 @@ for (const [buttonId, menuId] of Object.entries(toggleButtons)) {
 }
 
 document.addEventListener('click', () => closeAllMenus());
+
+/** =====================================================
+ *  carousel
+  ======================================================= */
+  const carousel = document.getElementById('carousel');
+  const items = document.querySelectorAll('.carousel-item');
+  const dots = document.querySelectorAll('.dot');
+  let currentIndex = 0;
+  let isDragging = false;
+  let startPos = 0;
+  let currentTranslate = 0;
+  let prevTranslate = 0;
+  let autoSlideInterval;
+
+  function autoSlide() {
+    autoSlideInterval = setInterval(() => {
+      currentIndex = (currentIndex + 1) % items.length;
+      setPositionByIndex();
+    }, 4000);
+  }
+
+  function setPositionByIndex() {
+    currentTranslate = currentIndex * -carousel.offsetWidth;
+    prevTranslate = currentTranslate;
+    carousel.style.transition = 'transform 0.5s ease-in-out';
+    carousel.style.transform = `translateX(${currentTranslate}px)`;
+    updateDots();
+  }
+
+  function updateDots() {
+    dots.forEach(dot => dot.classList.remove('active'));
+    dots[currentIndex].classList.add('active');
+  }
+
+  // Touch and drag events
+  items.forEach((item, index) => {
+    const touchStart = (e) => {
+      isDragging = true;
+      startPos = getPositionX(e);
+      cancelAnimationFrame(animationID);
+      clearInterval(autoSlideInterval);
+    };
+
+    const touchMove = (e) => {
+      if (!isDragging) return;
+      const currentPosition = getPositionX(e);
+      currentTranslate = prevTranslate + currentPosition - startPos;
+      carousel.style.transform = `translateX(${currentTranslate}px)`;
+    };
+
+    const touchEnd = () => {
+      isDragging = false;
+      const movedBy = currentTranslate - prevTranslate;
+
+      if (movedBy < -50 && currentIndex < items.length - 1) currentIndex += 1;
+      if (movedBy > 50 && currentIndex > 0) currentIndex -= 1;
+
+      setPositionByIndex();
+      autoSlide();
+    };
+
+    item.addEventListener('touchstart', touchStart);
+    item.addEventListener('touchmove', touchMove);
+    item.addEventListener('touchend', touchEnd);
+
+    item.addEventListener('mousedown', touchStart);
+    item.addEventListener('mousemove', touchMove);
+    item.addEventListener('mouseup', touchEnd);
+    item.addEventListener('mouseleave', () => { if (isDragging) touchEnd(); });
+  });
+
+  function getPositionX(e) {
+    return e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+  }
+
+  // Dot click events
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      currentIndex = parseInt(dot.dataset.index);
+      setPositionByIndex();
+      clearInterval(autoSlideInterval);
+      autoSlide();
+    });
+  });
+
+  autoSlide();
