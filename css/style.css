@@ -307,10 +307,10 @@ section {
 }
 
 .card section.info .event-info {
-    width: 75%;
+    width: 90%;
     text-align: center;
     position: relative;
-    z-index: 100;
+    z-index: 500;
 }
 
 .card section.info .event-info p {
@@ -372,7 +372,7 @@ section {
     font-size: 18px;
     white-space: nowrap;  /* Prevent wrapping */
     overflow: hidden;     /* Ensure content doesn't overflow */
-    text-overflow: ellipsis;
+    text-overflow: ellipsis
 }
 
 .card section.info .event-info .three .title,
