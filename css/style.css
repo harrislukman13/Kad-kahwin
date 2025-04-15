@@ -84,7 +84,7 @@ body {
     padding: 0;
     font-size: 30px;
     font-weight: 500;
-    font-family: "Great Vibes", cursive;
+    font-family: "Playfair Display", serif;
     color: #302b63;
 }
 
@@ -291,7 +291,7 @@ section {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding: 50px 10px;
+    padding: 20px;
     background: linear-gradient(to right, #F8F4FF, #f9fcff, #F8F4FF);
     min-height: 100vh;
 }
