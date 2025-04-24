@@ -340,4 +340,14 @@ document.addEventListener('click', () => closeAllMenus());
     }, 5000);
   }
 
+  /** =====================================================
+ *  music
+  ======================================================= */
+
+  const audio = document.getElementById("audio-player");
+
+  window.addEventListener("beforeunload", function () {
+      audio.pause();
+      audio.currentTime = 0; // Optional: resets the audio to the start
+  });
   
