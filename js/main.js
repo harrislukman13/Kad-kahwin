@@ -241,6 +241,27 @@ for (const [buttonId, menuId] of Object.entries(toggleButtons)) {
 document.addEventListener('click', () => closeAllMenus());
 
 /** =====================================================
+ *  music
+======================================================= */
+
+  const audio = document.getElementById("audio-player");
+
+    // Check if we should autoplay
+    const shouldAutoplay = localStorage.getItem("shouldAutoplay");
+
+    if (shouldAutoplay !== "false") {
+        audio.play().catch(() => {
+            // Some browsers block autoplay, you can handle that here if needed
+        });
+    }
+
+    // When user closes tab/browser, pause and remember not to autoplay next time
+    window.addEventListener("beforeunload", function () {
+        audio.pause();
+        localStorage.setItem("shouldAutoplay", "false");
+    });
+
+/** =====================================================
  *  carousel
   ======================================================= */
   const carousel = document.getElementById('carousel');
@@ -341,14 +362,5 @@ document.addEventListener('click', () => closeAllMenus());
   }
 
 
-/** =====================================================
- *  music
-  ======================================================= */
 
-  const audio = document.getElementById("audio-player");
-
-  window.addEventListener("beforeunload", function () {
-      audio.pause();
-      audio.currentTime = 0; // Optional: resets the audio to the start
-  });
   
