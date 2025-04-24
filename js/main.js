@@ -244,22 +244,27 @@ document.addEventListener('click', () => closeAllMenus());
  *  music
 ======================================================= */
 
-  const audio = document.getElementById("audio-player");
+const audio = document.getElementById("audio-player");
 
-    // Check if we should autoplay
-    const shouldAutoplay = localStorage.getItem("shouldAutoplay");
-
-    if (shouldAutoplay !== "false") {
-        audio.play().catch(() => {
-            // Some browsers block autoplay, you can handle that here if needed
-        });
-    }
-
-    // When user closes tab/browser, pause and remember not to autoplay next time
-    window.addEventListener("beforeunload", function () {
+// Pause audio when tab is hidden
+document.addEventListener("visibilitychange", function () {
+    if (document.visibilityState === "hidden") {
         audio.pause();
+        // Optionally: store state
         localStorage.setItem("shouldAutoplay", "false");
+    } else if (document.visibilityState === "visible") {
+        // If you want it to resume automatically, uncomment below:
+        // audio.play();
+    }
+});
+
+// Prevent autoplay on reload if previously hidden
+const shouldAutoplay = localStorage.getItem("shouldAutoplay");
+if (shouldAutoplay !== "false") {
+    audio.play().catch(() => {
+        // Handle autoplay block (browser settings)
     });
+}
 
 /** =====================================================
  *  carousel
