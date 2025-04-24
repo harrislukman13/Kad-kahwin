@@ -345,10 +345,10 @@ document.addEventListener('click', () => closeAllMenus());
  *  music
   ======================================================= */
 
-//   const audio = document.getElementById("audio-player");
+  const audio = document.getElementById("audio-player");
 
-//   window.addEventListener("beforeunload", function () {
-//       audio.pause();
-//       audio.currentTime = 0; // Optional: resets the audio to the start
-//   });
+  window.addEventListener("beforeunload", function () {
+      audio.pause();
+      audio.currentTime = 0; // Optional: resets the audio to the start
+  });
   
