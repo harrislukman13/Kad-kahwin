@@ -123,7 +123,7 @@ function addAppleCalendar() {
 function openGoogleMaps() {
     const latitude = 4.226058186123785;
     const longitude = 101.22905188341969;
-    const googleMapsUrl = `https://maps.app.goo.gl/AX7ZCthqgnfv7yYz6`;
+    const googleMapsUrl = `https://maps.app.goo.gl/oDrDjb6ZGqejjtmY8`;
     window.open(googleMapsUrl, "_blank");
 }
 
